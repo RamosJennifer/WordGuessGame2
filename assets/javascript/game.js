@@ -13,24 +13,22 @@ for (i = 0; i < usArray.length; i++) {
     document.getElementById("currentWord").innerHTML = (usArray[i] + " ").repeat(usArray.length);
 }
 
-function newRound() {
-    lettersGuessed = [];
-    guessesRemaining = 10;
-    randomize = charachters[Math.floor(Math.random() * charachters.length)];
-    currentWord = randomize.toLowerCase();
-    underscore = "_";
-    underscoredWord = underscore.repeat(currentWord.length);
-    cwArray = Array.from(currentWord);
-    usArray = Array.from(underscoredWord);
-    
-
-    for (i = 0; i < usArray.length; i++) {
-        document.getElementById("currentWord").innerHTML = (usArray[i] + " ").repeat(usArray.length);
-    }
-}
-
 document.onkeyup = function (event) {
     var userGuess = event.key.toLowerCase();
+
+    function newRound() {
+        lettersGuessed = [];
+        guessesRemaining = 10;
+        randomize = charachters[Math.floor(Math.random() * charachters.length)];
+        currentWord = randomize.toLowerCase();
+        underscore = "_";
+        underscoredWord = underscore.repeat(currentWord.length);
+        cwArray = Array.from(currentWord);
+        usArray = Array.from(underscoredWord);
+        for (i = 0; i < usArray.length; i++) {
+            document.getElementById("currentWord").innerHTML = (usArray[i] + " ").repeat(usArray.length);
+        }
+    }
 
     for (i = 0; i < cwArray.length; i++) {
         var index = 0;
@@ -41,10 +39,11 @@ document.onkeyup = function (event) {
             document.getElementById("currentWord").innerHTML = usturnedString;
             var cwturnedString = cwArray.join(' ');
             if (usturnedString === cwturnedString) {
-                guessesRemaining = 0;
+                guessesRemaining = 1;
                 wins++
                 document.getElementById("wins").innerHTML = wins;
                 showAnswer();
+                // newRound();
             }
         }
     }
@@ -60,13 +59,13 @@ document.onkeyup = function (event) {
             lettersGuessed.push(userGuess);
             document.getElementById("lettersGuessed").innerHTML = lettersGuessed;
         }
-        if (guessesRemaining === 0) {
+        if (guessesRemaining <= 0) {
             showAnswer();
+            newRound();
         }
     }
     function showAnswer() {
         alert("The cwTurnedString " + currentWord);
-        newRound();
     }
 }
 
