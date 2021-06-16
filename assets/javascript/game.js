@@ -1,11 +1,11 @@
-var charachters = ["Rory", "Lorelai", "Luke", "Sookie", "Michel", "Emily", "Richard", "Lane", "Paris", "Madeline", "Louise", "Dean", "Jess", "Logan", "Christopher", "Jackson", "Babette", "Paty", "Taylor", "Kirk"]
-// Randomizing Charachters
+var charachters = ["Rory", "Lorelai", "Luke", "Sookie", "Michel", "Emily", "Richard", "Lane", "Paris", "Madeline", "Louise", "Dean", "Jess", "Logan", "Christopher", "Jackson", "Babette", "Patty", "Taylor", "Kirk"]
+    // Randomizing Charachters
 var randomize = charachters[Math.floor(Math.random() * charachters.length)]
 var currentWord = randomize.toLowerCase();
 // Converting randomized word into an underscored string
 var underscore = "_";
 var underscoredWord = underscore.repeat(currentWord.length)
-// Empty & Begining Count Variables
+    // Empty & Begining Count Variables
 var lettersGuessed = [];
 var wins = 0;
 var guessesRemaining = 10;
@@ -19,10 +19,10 @@ for (i = 0; i < usArray.length; i++) {
 }
 
 // user controlled function
-document.onkeyup = function (event) {
+document.onkeyup = function(event) {
     // tracking users actions
     var userGuess = event.key.toLowerCase();
-    
+
     // New Round
     function newRound() {
         lettersGuessed = [];
@@ -69,17 +69,13 @@ document.onkeyup = function (event) {
         }
     }
     // --------------------------------------------------------
-     // if (userGuess === ){
+    // if (userGuess === ){
     //     console.log("This letter has been guessed before.")
     // }
     // console.log("-------------------------------")
     //----------------------------------------------------------
-   
+
     function showAnswer() {
         alert("The answer was " + currentWord);
     }
 }
-
-
-
-

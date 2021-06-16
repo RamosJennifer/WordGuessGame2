@@ -3,3 +3,19 @@ h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #b26d4d;
 }
+
+.container {
+    width: auto;
+    height: 350px;
+    border-style: solid;
+    border-color: #b26d4d;
+}
+
+.headingSubtext {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace
+}
+
+.typewriter {
+    font-family: 'Courier New', Courier, monospace
+}

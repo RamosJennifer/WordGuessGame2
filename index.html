@@ -13,27 +13,32 @@
 
 <body>
     <h1>Gilmore girls</h1>
-    <p>Guess the Character</p>
-    <p>Press any key to get started!</p>
+    <div class="headingSubtext">
+        <p>Guess the Character</p>
+        <p>Press any key to get started!</p>
+    </div>
 
     <div class="container">
-
+        <div class="row">
+            <div class="col-6">
+                <!-- Empty Container -->
+            </div>
+            <div class="col-6">
+                <!-- Wins -->
+                <p class="typewriter">Wins</p>
+                <p id="wins"></p>
+                <!-- Current Word -->
+                <p class="typewriter">Current Word</p>
+                <p id="currentWord"></p>
+                <!-- Guesses Remaining -->
+                <p class="typewriter">Number of Guesses Remaining</p>
+                <p id="guessesRemaining"></p>
+                <!-- Letters Guesed -->
+                <p class="typewriter">Letters Already Guessed</p>
+                <p id="lettersGuessed"></p>
+            </div>
+        </div>
     </div>
-    <!-- Wins -->
-    <p>Wins</p>
-    <p id="wins"></p>
-    <!-- Current Word -->
-    <p>Current Word</p>
-    <p id="currentWord"></p>
-    <!-- Guesses Remaining -->
-    <p>Number of Guesses Remaining</p>
-    <p id="guessesRemaining"></p>
-    <!-- Letters Guesed -->
-    <p>Letters Already Guessed</p>
-    <p id="lettersGuessed"></p>
-
-    <!-- <p id="userGuess"></p> -->
-    <!-- <p id="guessesSoFar"></p> -->
 </body>
 <script src='assets/javascript/game.js'></script>
 
