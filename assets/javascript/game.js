@@ -67,14 +67,15 @@ document.onkeyup = function(event) {
             showImage();
             newRound();
         }
+        // Remove previous image if user starts guessing new character
         if (guessesRemaining === 9) {
             document.getElementById("answer").remove();
             document.getElementById("imgRevealed").remove();
         }
     }
 
+    // Character Reveal
     function showImage() {
-
         var img = document.createElement("img");
         img.src = "assets/images/" + currentWord + ".jpeg";
         img.alt = currentWord;
