@@ -17,7 +17,6 @@ usArray = Array.from(underscoredWord);
 for (i = 0; i < usArray.length; i++) {
     document.getElementById("currentWord").innerHTML = (usArray[i] + " ").repeat(usArray.length);
 }
-
 // user controlled function
 document.onkeyup = function(event) {
     // tracking users actions
@@ -25,9 +24,6 @@ document.onkeyup = function(event) {
 
     // New Round
     function newRound() {
-        // ----------------------------------------------------------
-        // document.getElementById("imageReveal").parentNode.removeChild(img);
-        // ----------------------------------------------------------
 
         lettersGuessed = [];
         guessesRemaining = 10;
@@ -68,23 +64,27 @@ document.onkeyup = function(event) {
             document.getElementById("lettersGuessed").innerHTML = lettersGuessed;
         }
         if (guessesRemaining === 0) {
-            showAnswer();
             showImage();
             newRound();
         }
+        if (guessesRemaining === 9) {
+            document.getElementById("answer").remove();
+            document.getElementById("imgRevealed").remove();
+        }
     }
 
-    function showAnswer() {
-        alert("The answer was " + currentWord);
-    }
-    // ----------------------------------------------------------
     function showImage() {
+
         var img = document.createElement("img");
         img.src = "assets/images/" + currentWord + ".jpeg";
         img.alt = currentWord;
         img.id = "imgRevealed";
+        document.getElementById("imageReveal").appendChild(img);
 
-        document.getElementById("imageReveal").appendChild(img)
+        var para = document.createElement("p");
+        para.id = "answer";
+        document.getElementById("showAnswer").appendChild(para);
+        document.getElementById("answer").innerHTML = currentWord;
     }
-    // ----------------------------------------------------------
+
 }

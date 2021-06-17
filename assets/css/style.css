@@ -8,6 +8,7 @@ h1 {
     width: auto;
     height: 100%;
     padding: 5%;
+    margin-bottom: 5%;
     border-style: solid;
     border-color: #b26d4d;
 }
@@ -15,6 +16,20 @@ h1 {
 #imgRevealed {
     max-width: 100%;
     height: auto;
+}
+
+#answer {
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 45px;
+    color: #b26d4d;
+    text-align: center;
+}
+
+#instructions {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    text-align: center;
 }
 
 .headingSubtext {
