@@ -25,6 +25,10 @@ document.onkeyup = function(event) {
 
     // New Round
     function newRound() {
+        // ----------------------------------------------------------
+        // document.getElementById("imageReveal").parentNode.removeChild(img);
+        // ----------------------------------------------------------
+
         lettersGuessed = [];
         guessesRemaining = 10;
         randomize = charachters[Math.floor(Math.random() * charachters.length)];
@@ -65,17 +69,22 @@ document.onkeyup = function(event) {
         }
         if (guessesRemaining === 0) {
             showAnswer();
+            showImage();
             newRound();
         }
     }
-    // --------------------------------------------------------
-    // if (userGuess === ){
-    //     console.log("This letter has been guessed before.")
-    // }
-    // console.log("-------------------------------")
-    //----------------------------------------------------------
 
     function showAnswer() {
         alert("The answer was " + currentWord);
     }
+    // ----------------------------------------------------------
+    function showImage() {
+        var img = document.createElement("img");
+        img.src = "assets/images/" + currentWord + ".jpeg";
+        img.alt = currentWord;
+        img.id = "imgRevealed";
+
+        document.getElementById("imageReveal").appendChild(img)
+    }
+    // ----------------------------------------------------------
 }

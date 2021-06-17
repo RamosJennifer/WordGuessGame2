@@ -6,9 +6,15 @@ h1 {
 
 .container {
     width: auto;
-    height: 350px;
+    height: 100%;
+    padding: 5%;
     border-style: solid;
     border-color: #b26d4d;
+}
+
+#imgRevealed {
+    max-width: 100%;
+    height: auto;
 }
 
 .headingSubtext {
